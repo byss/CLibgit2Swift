@@ -1,0 +1,5 @@
+module CLibgit2Swift [system] {
+  header "libgit2.h"
+  link "libgit2"
+  export *
+}
