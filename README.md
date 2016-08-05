@@ -5,7 +5,23 @@ A swift package manager wrapper for libgit2
 ## Requirements
 
  - Swift package manager (SPM, see http://swift.org)
- - Libgit2 C library, install via `brew install libgit2`
+ - Libgit2 C library installed
+
+ ### Install on Mac OS
+
+```
+brew install libgit2
+```
+
+### Install on Linux
+
+```
+sudo apt-get update
+sudo apt-get install libgit2-dev
+sudo ldconfig
+```
+
+or build manually, but don't forget this `sudo ldconfig`!
 
 ## Usage
 
@@ -47,3 +63,7 @@ let package = Package(
 )
 
 ```
+
+## Caveat
+
+The libgit2 pkg-config file is currently not compatible with the Swift Package Manger. In particular commit [768e185c54164a66fc4e2dbe7c58097eff65ebdf](https://github.com/libgit2/libgit2/commit/768e185c54164a66fc4e2dbe7c58097eff65ebdf) introduced some quotes which need to be removed from the `pkgconfig/libgit2.pc` to work properly with the swift build system.
