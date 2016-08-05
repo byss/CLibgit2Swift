@@ -7,28 +7,28 @@ A swift package manager wrapper for libgit2
  - Swift package manager (SPM, see http://swift.org)
  - Libgit2 C library installed
 
- ### Install on Mac OS
+  ### Install on Mac OS
 
-```
-brew install libgit2
-```
+  ```
+  brew install libgit2
+  ```
 
-### Install on Linux
+  ### Install on Linux
 
-```
-sudo apt-get update
-sudo apt-get install libgit2-dev
-sudo ldconfig
-```
+  ```
+  sudo apt-get update
+  sudo apt-get install libgit2-dev
+  sudo ldconfig
+  ```
 
-or build manually, but don't forget this `sudo ldconfig`!
+  or build manually, but don't forget this `sudo ldconfig`!
 
 ## Usage
 
 In order to use CRabbitMQ in Swift, for example in a file as follows:
 
 ```
-import CLibgit2Swift
+import CLibgit2
 
 
 // init git
