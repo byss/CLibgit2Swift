@@ -1,5 +1,5 @@
 module CLibgit2Swift [system] {
-  umbrella header "libgit2.h"
+  umbrella header "/usr/local/Cellar/libgit2/0.24.1/include/git2.h"
   link "git2"
   export *
 }
