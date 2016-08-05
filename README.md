@@ -12,10 +12,25 @@ A swift package manager wrapper for libgit2
 In order to use CRabbitMQ in Swift, for example in a file as follows:
 
 ```
-import CRabbitMQ
+import CLibgit2Swift
 
-let conn = amqp_new_connection()
-print("conn: \(conn)")
+
+// init git
+Swift.print("libgit init")
+git_libgit2_init()
+
+// query git version
+var major:Int32 = 0
+var minor:Int32 = 0
+var rev:Int32 = 0
+git_libgit2_version(&major, &minor, &rev)
+Swift.print("libgit version: \(major).\(minor).\(rev)")
+
+
+// shutdown git
+git_libgit2_shutdown()
+Swift.print("shut down")
+
 ```
 
 all you need is to place a `Package.swift` file in the same directory:
@@ -24,26 +39,11 @@ all you need is to place a `Package.swift` file in the same directory:
 import PackageDescription
 
 let package = Package(
-    name: "HastyHare",
+    name: "GitTest",
+    targets: [],
     dependencies: [
-        .Package(url: "https://github.com/feinstruktur/CRabbitMQ", majorVersion: 1)
+        .Package(url: "https://github.com/ben-ole/CLibgit2Swift.git", majorVersion: 0)
     ]
 )
-```
 
-Build it:
-
-```
-» swift build
-Cloning https://github.com/feinstruktur/CRabbitMQ
-Using version 1.0.3 of package CRabbitMQ
-Compiling Swift Module 'HastyHare' (1 sources)
-Linking Executable:  .build/debug/HastyHare
-```
-
-Check that it works:
-
-```
-» .build/debug/HastyHare
-conn: 0x00007fc9e2c0cb60
 ```
