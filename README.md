@@ -1,3 +1,7 @@
+[![Swift][swift-badge]][swift-url]
+[![Platform][platform-badge]][platform-url]
+[![License][mit-badge]][mit-url]
+
 # CLibgit2Swift
 
 A swift package manager wrapper for libgit2
@@ -67,3 +71,11 @@ let package = Package(
 ## Caveat
 
 The libgit2 pkg-config file is currently not compatible with the Swift Package Manger. In particular commit [768e185c54164a66fc4e2dbe7c58097eff65ebdf](https://github.com/libgit2/libgit2/commit/768e185c54164a66fc4e2dbe7c58097eff65ebdf) introduced some quotes which need to be removed from the `pkgconfig/libgit2.pc` to work properly with the swift build system.
+
+
+[swift-badge]: https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat
+[swift-url]: https://swift.org
+[platform-badge]: https://img.shields.io/badge/Platforms-OS%20X%20--%20Linux-lightgray.svg?style=flat
+[platform-url]: https://swift.org
+[mit-badge]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat
+[mit-url]: https://tldrlegal.com/license/mit-license
