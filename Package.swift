@@ -1,7 +1,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "CLibgit2",
+    name: "Clibgit2",
     pkgConfig: "libgit2",
     providers: [
         .Brew("libgit2"),

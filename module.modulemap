@@ -1,4 +1,4 @@
-module CLibgit2 [system] {
+module Clibgit2 [system] {
   header "libgit2.h"
   link "git2"
   export *
